@@ -1,38 +1,458 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Rubik+Mono+One&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    list-style: none;
+    text-decoration: none;
+}
+img{
+    max-width: 100%;
+    display: block;
+    height: auto;
+}
+:root{
+    --main-background-color: #faf8f4;
+    --secondary-background-color: #ffffff;
+    --main-color:#8fbc8f;
+    /* --main-color:#20b2aa; */
+    /* --main-color:#5f9ea0; */
+    /* --main-color:#B2C61D; */
+    --font-color: #212121;
+    --link-hover-color: #3500D3;
+    --outline-separator: 1px solid #eaeae1;
+
+    --trans-05:all .5s ease;
+    --trans-03:all .3s ease;
+    --trans-02:all .2s ease;
+
+    --h1-font: 6rem;
+    --h1-font-thin: 4.4rem;
+    --h2-font: 2.4rem;
+    --p-font: 1rem;
+    --p-font-bold: 1.2rem;
+}
+body{
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    color: #2f4f4f;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body.dark{
+    --main-background-color: #3a3b3c;
+    --secondary-background-color: #242526;
+    --font-color: #cccccc;
+    --link-hover-color: #3500D3;
+    --outline-separator: 1px solid #4d4c4c;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+nav{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    padding: 10px 14px;
+    background: var(--secondary-background-color);
+    border-right: var(--outline-separator);
+    transition: var(--trans-05);
+    z-index: 1000;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+nav.close{
+    width: 72px; 
+}
+nav .logo__area {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav__logo {
+    display: flex;
+    align-items: center;
+}
+nav  .logo{
+    min-width: 45px;
+} 
+nav .logo img{
+    width: 40px;
+    object-fit: cover;
+}
+nav .logo__area .logo__title{
+  font-size: 22px;
+  /* margin-left: 14px; */
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--main-color);
+  transition: var(--trans-05);
+}
+.close__icon {
+    font-size: 25px;
+    display: none;
+}
+nav.close .logo__area .logo__title{
+    opacity: 0;
+    pointer-events: none;
+}
+.menu__area{
+    margin-top: 40px;
+    height: calc(100% - 90px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+ .menu__area li a{
+    display: flex;
+    align-items: center;
+    height: 40px;
+    color: var(--font-color);
+    text-transform: capitalize;
+    position: relative;
+    transition: var(--trans-05);
+}
+.nav__items li a:hover:before{
+    content: "";
+    position: absolute;
+    left: -7px;
+    height: 5px;
+    width: 5px;
+    background: var(--main-color);
+    border-radius: 50%;
+}
+ .menu__area li a i{
+    min-width: 40px;
+    font-size: 24px;
+    color: var(--main-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.nav__item{
+    font-size: 16px;
+    color: var(--font-color);
+    transition: var(--trans-05);
+}
+nav.close .nav__item{
+    opacity: 0;
+    pointer-events: none;
+}
+.nav__items li a:hover i,
+.nav__items li a:hover .nav__item
+{
+  color: var(--main-color);
 }
 
-.App-link {
-  color: #61dafb;
+.dashbord, .imergency, .fish__buy,.fish__sell, .fish__care{
+    position: relative;
+    left: 250px;
+    min-height:100vh ;
+    width: calc(100% - 250px);
+    padding: 10px 14px;
+    background: var(--main-background-color);
+    transition: var(--trans-05);
+}
+nav.close ~ .dashbord{
+    left: 72px;;
+    width: calc(100% - 72px);
+
+}
+.das__toparea{
+    position: fixed;
+    top: 0;
+    left: 250px;
+    width: calc(100% - 250px);
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--secondary-background-color);
+    border-bottom: var(--outline-separator);
+    transition: var(--trans-05);
+    z-index: 999;
+}
+nav.close ~ .dashbord .das__toparea{
+    left: 72px;;
+    width: calc(100% - 72px);
+}
+.das__toparea > i{
+    color: var(--font-color);
+    font-size: 22px;
+    cursor: pointer;
+}
+.right__side{
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+}
+.right__side > i{
+  border: var(--outline-separator);
+  border-radius: 50%;
+  font-size: 24px;
+  padding: 5px;
+  background: var(--secondary-background-color);
+  cursor: pointer;
+}
+.right__side img{
+    width: 40px;
+    border-radius: 50%;
+}
+.das__content,.imergency_area,.fish__buy__area, .fish__sell__area,.fish__care__area {
+    padding: 90px 0 30px;
+}
+.das__content {
+    padding: 90px 0 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px , auto));
+    gap: 20px;
+}
+.common {
+    /* width: calc( 100%/3 - 15px); */
+    background: var(--main-color);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 6px;
+}
+.common .title {
+    font-weight: 600;
+    margin-block-end: 20px;
+}
+.common .person {
+    font-weight: 700;
+    font-size: 35px;
+} 
+
+.who_we_are{
+ padding: 20px 0;
+}
+.who_we_are .who_title{
+    font-size: var(--h2-font);
+    color: var(--main-color);
+    margin-block-end: 20px;
+}
+.who_we_are p{
+    font-size: var(--p-font-bold);
+    line-height: 1.6;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.support_team{
+    padding: 20px 0;  
+}
+
+.support_team .support_title{
+    font-size: var(--h2-font);
+    color: var(--main-color);
+    margin-block-end: 20px; 
+}
+.support_person{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px , auto));
+    gap: 20px;
+}
+.single_support{
+ background: #fff;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ padding: 30px;
+ border-radius: 6px;
+ box-shadow: 1px 2px 2px 0px rgba(0,0,0,.4);
+}
+.single_support img{
+    width:100px ;
+    border-radius: 50%;
+    object-fit: contain;
+}
+.fish__sell,.fish__buy{
+    display: grid;
+    justify-content: center;
+}
+.fish__sell__title,.fish__buy__title, .imergency__title,.fish__care__title{
+    font-size: var(--h2-font);
+    font-weight: 600;
+    margin-block-end: 20px;
+    color: var(--main-color);
+    text-align: center;
+}
+.single__form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-block-end: 20px;
+}
+
+select,input[type="number"],input[type="text"] {
+    height: 40px;
+    padding: 8px;
+    font-size: 18px;
+    border-radius: 6px;
+    background: rgba(0, 0, 0, 0.15);
+    color: #000;
+}
+
+.subBtn {
+    background: firebrick;
+    text-align: center;
+    width: 100%;
+    padding: 15px;
+    border-radius: 6px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all .50s ease;
+}
+
+.subBtn:hover {
+    background: rgb(156, 13, 13);
+}
+
+.fish__buy__menu ul{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(90px,auto));
+  gap: 5px;
+}
+
+.fish__buy__menu ul li{
+ background: rgba(0, 0, 0, 0.15);
+ text-align: center;
+ padding: 10px 0;
+ border-radius: 6px;
+ cursor: pointer;
+ transition: all .50s ease;
+} 
+
+.fish__buy__menu ul li:hover{
+ background: rgba(185, 20, 20, 0.15);
+
+} 
+
+.fish__buy__notice {
+    margin-block-start: 50px;
+}
+.single__notice {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    background: #dcdcdc7d;
+    padding: 64px;
+    font-size: 18px;
+    border-radius: 6px;
+    margin-block-end: 20px;
+}
+.farmer__info,.fish__info{
+    display: flex;
+    flex-direction: column;
+
+}
+.mobail__logo__area {
+    display: none;
+}
+.sidebar__toggle {
+    display: none;
+}
+
+.imergency_man{ 
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,auto));
+    gap: 25px;
+}
+.single_imergency_man {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.single_imergency_man img {
+    width: 322px;
+    height: 350px;
+    border-radius: 6px;
+    margin-block-end: 20px;
+}
+.single_imergency_man span {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media(max-width: 1050px){
+
+    .single__notice {
+        flex-direction: column;
+        padding: 6px;
+        font-size: 16px;
+    }
+}
+@media(max-width: 767px){
+
+    .single__notice {
+        flex-direction: column;
+        padding: 6px;
+        font-size: 16px;
+    }
+}
+@media(max-width: 600px){
+
+    .close__icon {
+        display: block;
+    }
+    .left__side {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+    }
+    .sidebar__toggle {
+        display: block;
+        font-size: 30px;
+        cursor: pointer;
+    }
+    .show{
+        left: 0px;
+    }
+    .hide{
+        left: -250px;
+    }
+    .mobail__logo__area {
+        display: flex;
+        align-items: center;
+    }
+    .mobail__logo__area  .logo{
+        min-width: 40px;
+    } 
+    .mobail__logo__area .logo img{
+        width: 35px;
+        object-fit: cover;
+    }
+    .mobail__logo__area .logo__title {
+        font-size: 24px;
+        font-weight: 600;
+    }
+    .dashbord, .imergency, .fish__buy, .fish__sell, .fish__care {
+        left: 0px;
+        width: 100%;
+    }
+    .das__toparea {
+        left: 0px;
+        width: 100%;
+    }
+
+
 }

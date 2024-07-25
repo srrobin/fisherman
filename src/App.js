@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import "./App.css";
+import Dashboard from './components/Dashboard';
+import FishBuy from './components/FishBuy';
+import FishSell from './components/FishSell';
+import ImergencyService from './components/ImergencyService';
+import FishCare from './components/FishCare';
+import UserDashboard from './components/UserDashboard';
+import Navbar from './components/Navbar';
+import TopArea from './components/TopArea';
 
-function App() {
+const App = () => {
+  const [isToggled, setIsToggled] = useState(false);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navbar isToggled={isToggled} setIsToggled={setIsToggled}/>
+      <TopArea  isToggled={isToggled} setIsToggled={setIsToggled}/>
+      <Routes>
+        <Route path='/' element={ <FishBuy/>}/>
+        <Route path='/dashboard' element={ <Dashboard/>}/>
+        <Route path='/user' element={ <UserDashboard/>}/>
+        <Route path='/fishselluser' element={ <FishSell/>}/>
+        <Route path='/fishcare' element={ <FishCare/>}/>
+        <Route path='/imergency' element={ <ImergencyService/>}/>
+      </Routes>
     </div>
   );
-}
+};
 
 export default App;

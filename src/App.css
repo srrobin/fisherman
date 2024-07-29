@@ -19,9 +19,6 @@ img{
     --main-background-color: #faf8f4;
     --secondary-background-color: #ffffff;
     --main-color:#8fbc8f;
-    /* --main-color:#20b2aa; */
-    /* --main-color:#5f9ea0; */
-    /* --main-color:#B2C61D; */
     --font-color: #212121;
     --link-hover-color: #3500D3;
     --outline-separator: 1px solid #eaeae1;
@@ -204,6 +201,10 @@ nav.close ~ .dashbord .das__toparea{
 .das__content,.imergency_area,.fish__buy__area, .fish__sell__area,.fish__care__area {
     padding: 90px 0 30px;
 }
+.fish__care__desc{
+    font-size: var(--p-font-bold);
+    margin-block-end: 30px;
+}
 .das__content {
     padding: 90px 0 30px;
     display: grid;
@@ -246,11 +247,13 @@ nav.close ~ .dashbord .das__toparea{
     padding: 20px 0;  
 }
 
-.support_team .support_title{
-    font-size: var(--h2-font);
+.support_team .support_title,.owner_post_title{
+    font-size:30px;
     color: var(--main-color);
-    margin-block-end: 20px; 
+    text-align: center;
+    margin-block-end: 10px; 
 }
+
 .support_person{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px , auto));
@@ -319,7 +322,7 @@ select,input[type="number"],input[type="text"] {
 }
 
 .fish__buy__menu ul li{
- background: rgba(0, 0, 0, 0.15);
+ background: var(--main-color);
  text-align: center;
  padding: 10px 0;
  border-radius: 6px;
@@ -337,13 +340,27 @@ select,input[type="number"],input[type="text"] {
 }
 .single__notice {
     display: flex;
+    align-items: center;
     justify-content: space-between;
     gap: 50px;
     background: #dcdcdc7d;
+    background-image: url("https://www.transparenttextures.com/patterns/gplay.png");
     padding: 64px;
     font-size: 18px;
     border-radius: 6px;
     margin-block-end: 20px;
+}
+.fish_image{
+    max-width: 400px;
+    width: 100%;
+    height: 225px;
+
+}
+.fish_image img{
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+    border-radius: 6px;
 }
 .farmer__info,.fish__info{
     display: flex;
@@ -397,7 +414,7 @@ select,input[type="number"],input[type="text"] {
 
     .single__notice {
         flex-direction: column;
-        padding: 6px;
+        padding: 20px 6px;
         font-size: 16px;
     }
 }
@@ -405,12 +422,25 @@ select,input[type="number"],input[type="text"] {
 
     .single__notice {
         flex-direction: column;
-        padding: 6px;
+        padding: 20px 6px;
         font-size: 16px;
     }
 }
 @media(max-width: 600px){
-
+    .das__content {
+        grid-template-columns: repeat(auto-fit, minmax(150px , auto));
+    }
+    .common .person {
+        font-weight: 600;
+        font-size: 20px;
+    }
+    .common .title {
+        font-weight: 600;
+        margin-block-end: 9px;
+    }
+    .single_support {
+        padding: 15px;
+    }
     .close__icon {
         display: block;
     }
@@ -452,6 +482,11 @@ select,input[type="number"],input[type="text"] {
     .das__toparea {
         left: 0px;
         width: 100%;
+        background-image: url("https://www.transparenttextures.com/patterns/gplay.png");
+    }
+    nav{
+        background-image: url("https://www.transparenttextures.com/patterns/gplay.png");
+
     }
 
 

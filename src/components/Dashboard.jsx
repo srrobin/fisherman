@@ -3,6 +3,7 @@ import man1 from "../images/man1.jpg";
 import man2 from "../images/man2.png";
 import man3 from "../images/man3.webp";
 import man4 from "../images/man4.png";
+import f from "../images/s.webp"
 
 const Dashboard = () => {
     return (
@@ -10,32 +11,49 @@ const Dashboard = () => {
       <div class="das__content">
         <div class="common">
           <i class="ri-contrast-drop-2-line"></i>
-          <span class="title"> মোট গ্রাহক </span>
+          <span class="title"> মোট সদস্য </span> 
           <span class="person"> ৩০০০ জন </span>
         </div>
         <div class="common">
           <i class="ri-contrast-drop-2-line"></i>
-          <span class="title"> মাছ বিক্রয়কারি </span>
+          <span class="title"> মোট নোটিশ </span> 
           <span class="person"> ২৩৪৫ জন </span> 
         </div>
         <div class="common">
           <i class="ri-contrast-drop-2-line"></i>
-          <span class="title"> মাছ ক্রয়কারি </span>
+          <span class="title">  সক্রিয় সদস্য</span> 
           <span class="person"> ৭৫৫ জন </span> 
-        </div>
+        </div> 
         <div class="common">
           <i class="ri-contrast-drop-2-line"></i>
-          <span class="title"> অন্যান্য</span>
-          <span class="person">৪ জন</span> 
-        </div>
+          <span class="title"> আপনার  নোটিশ</span> 
+          <span class="person">১ টি</span> 
+        </div> 
       </div>
 
-      <div className='who_we_are'>
-        <div className='who_title'>আমাদের লক্ষ এবং উদ্দেশ্যঃ</div>
-        <p> 
-        ময়মনসিংহে আপনাকে স্বাগতম প্রাকৃতিক সৌন্দর্যের লিলা ভূমি যা আপনাকে মোহিত করবে ময়মনসিংহে আপনাকে স্বাগতম প্রাকৃতিক সৌন্দর্যের লিলা ভূমি যা আপনাকে মোহিত করবে ময়মনসিংহে আপনাকে স্বাগতম প্রাকৃতিক সৌন্দর্যের লিলা ভূমি যা আপনাকে মোহিত করবে ময়মনসিংহে আপনাকে স্বাগতম প্রাকৃতিক সৌন্দর্যের লিলা ভূমি যা আপনাকে মোহিত করবে ময়মনসিংহে আপনাকে স্বাগতম প্রাকৃতিক সৌন্দর্যের লিলা ভূমি যা আপনাকে মোহিত করবে ময়মনসিংহে আপনাকে স্বাগতম প্রাকৃতিক সৌন্দর্যের লিলা ভূমি যা আপনাকে মোহিত করবে ময়মনসিংহে আপনাকে স্বাগতম প্রাকৃতিক সৌন্দর্যের লিলা ভূমি যা আপনাকে মোহিত করবে ময়মনসিংহে আপনাকে স্বাগতম প্রাকৃতিক সৌন্দর্যের লিলা ভূমি যা আপনাকে মোহিত করবে ময়মনসিংহে আপনাকে স্বাগতম প্রাকৃতিক সৌন্দর্যের লিলা ভূমি যা আপনাকে মোহিত করবে ময়মনসিংহে আপনাকে স্বাগতম প্রাকৃতিক সৌন্দর্যের লিলা ভূমি যা আপনাকে মোহিত করবে সৌন্দর্যের লিলা ভূমি যা আপনাকে মোহিত করবে ময়মনসিংহে আপনাকে স্বাগতম প্রাকৃতিক সৌন্দর্যের লিলা ভূমি যা আপনাকে মোহিত করবে ময়মনসিংহে আপনাকে স্বাগতম প্রাকৃতিক সৌন্দর্যের লিলা ভূমি যা আপনাকে মোহিত করবে ময়মনসিংহে আপনাকে স্বাগতম প্রাকৃতিক সৌন্দর্যের লিলা ভূমি যা আপনাকে মোহিত করবে
-        </p>
-      </div>
+    <div className='owner_post'>
+    <div className='owner_post_title'>আপনার সকল নোটিশঃ</div>   
+    <div className='fish__buy__notice'>
+                    <div className='single__notice'>
+                        <div className='farmer__info'>
+                            <span>নামঃ  মোঃ হাসেম আলী</span>
+                            <span>মোবাঃ ০১৯২২৫৯০০১৯</span>
+                            <span style={{color:"#a52a2a",fontWeight:"600"}}>স্থানঃ রামভদ্রপুর</span> 
+                            <span style={{color:"green",fontWeight:"600"}}>২ ঘন্টা আগে</span> 
+                        </div>
+
+                        <div className='fish_image'>
+                            <img src={f} alt=''/>
+                        </div>
+                        <div className='fish__info'>
+                            <span> মাছের নামঃ শিং মাছ</span>
+                            <span>  অবস্তাঃ ১-দিনের পোনা</span>
+                            <span>  পরিমানঃ ২০০০  ( পিস )</span>
+                            <span>  মূল্যঃ  ১০০০ ( হাজার হিসেবে ) </span>
+                        </div>
+                    </div>
+                  </div>
+    </div>
 
       <div className='support_team'>
       <div className='support_title'>সাপোর্ট টিমঃ</div> 

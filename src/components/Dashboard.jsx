@@ -3,7 +3,16 @@ import man1 from "../images/man1.jpg";
 import man2 from "../images/man2.png";
 import man3 from "../images/man3.webp";
 import man4 from "../images/man4.png";
+<<<<<<< HEAD
 import f from "../images/a1.jpeg"
+=======
+import f from "../images/s.webp"
+import { CiEdit } from "react-icons/ci";
+import { FaDeleteLeft } from "react-icons/fa6";
+import { BiSolidShow } from "react-icons/bi";
+import { MdVisibilityOff } from "react-icons/md";
+
+>>>>>>> d9988afc0349abf53695530a492a178ae396704d
 
 const Dashboard = () => {
     return (
@@ -34,23 +43,69 @@ const Dashboard = () => {
     <div className='owner_post'>
     <div className='owner_post_title'>আপনার সকল নোটিশঃ</div>   
     <div className='fish__buy__notice'>
-                    <div className='single__notice'>
-                        <div className='farmer__info'>
-                            <span>নামঃ  মোঃ হাসেম আলী</span>
-                            <span>মোবাঃ ০১৯২২৫৯০০১৯</span>
-                            <span style={{color:"#a52a2a",fontWeight:"600"}}>স্থানঃ রামভদ্রপুর</span> 
-                            <span style={{color:"green",fontWeight:"600"}}>২ ঘন্টা আগে</span> 
+                    <div className='owner_post'>
+                      <div className='owner_post_actions'>
+                        <div className=''>
+                            <CiEdit  className='owner_action'/>
                         </div>
+                        <div className=''>
+                            <FaDeleteLeft  className='owner_action'/>
+                        </div>
+                        <div className=''>
+                            <BiSolidShow  className='owner_action'/>
+                            <MdVisibilityOff  className='owner_action' style={{display:"none"}}/>
+                        </div>
+                      </div>
+                      <div className='single__notice'>
+                          <div className='farmer__info'>
+                              <span>নামঃ  মোঃ হাসেম আলী</span>
+                              <span>মোবাঃ ০১৯২২৫৯০০১৯</span>
+                              <span style={{color:"#a52a2a",fontWeight:"600"}}>স্থানঃ রামভদ্রপুর</span> 
+                              <span style={{color:"green",fontWeight:"600"}}>২ ঘন্টা আগে</span> 
+                          </div>
 
-                        <div className='fish_image'>
-                            <img src={f} alt=''/>
+                          <div className='fish_image'>
+                              <img src={f} alt=''/>
+                          </div>
+                          <div className='fish__info'>
+                              <span> মাছের নামঃ শিং মাছ</span>
+                              <span>  অবস্তাঃ ১-দিনের পোনা</span>
+                              <span>  পরিমানঃ ২০০০  ( পিস )</span>
+                              <span>  মূল্যঃ  ১০০০ ( হাজার হিসেবে ) </span>
+                          </div>
+                      </div>
+                    </div>
+                    <div className='owner_post'>
+                      <div className='owner_post_actions'>
+                        <div className=''>
+                            <CiEdit  className='owner_action'/>
                         </div>
-                        <div className='fish__info'>
-                            <span> মাছের নামঃ শিং মাছ</span>
-                            <span>  অবস্তাঃ ১-দিনের পোনা</span>
-                            <span>  পরিমানঃ ২০০০  ( পিস )</span>
-                            <span>  মূল্যঃ  ১০০০ ( হাজার হিসেবে ) </span>
+                        <div className=''>
+                            <FaDeleteLeft  className='owner_action'/>
                         </div>
+                        <div className=''>
+                            <BiSolidShow  className='owner_action'/>
+                            <MdVisibilityOff  className='owner_action' style={{display:"none"}}/>
+                        </div>
+                      </div>
+                      <div className='single__notice'>
+                          <div className='farmer__info'>
+                              <span>নামঃ  মোঃ হাসেম আলী</span>
+                              <span>মোবাঃ ০১৯২২৫৯০০১৯</span>
+                              <span style={{color:"#a52a2a",fontWeight:"600"}}>স্থানঃ রামভদ্রপুর</span> 
+                              <span style={{color:"green",fontWeight:"600"}}>২ ঘন্টা আগে</span> 
+                          </div>
+
+                          <div className='fish_image'>
+                              <img src={f} alt=''/>
+                          </div>
+                          <div className='fish__info'>
+                              <span> মাছের নামঃ শিং মাছ</span>
+                              <span>  অবস্তাঃ ১-দিনের পোনা</span>
+                              <span>  পরিমানঃ ২০০০  ( পিস )</span>
+                              <span>  মূল্যঃ  ১০০০ ( হাজার হিসেবে ) </span>
+                          </div>
+                      </div>
                     </div>
                   </div>
     </div>

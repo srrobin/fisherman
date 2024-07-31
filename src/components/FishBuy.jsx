@@ -28,11 +28,17 @@ const FishBuy = () => {
               <div className='fish__buy__title'>মাছ ক্রয় করুন</div> 
               <div className='fish__buy__menu'>
                   <ul>
+<<<<<<< HEAD
                     <li> ছোট পোনা </li>
                     <li> বড় পোনা </li>
                     <li> বিক্রয় উপযোগী </li> 
                     <li> বাংলা মাছ  </li>   
                     <li> প্যারেন্ট মাছ </li>
+=======
+                    <li>পোনা  মাছ</li>
+                    <li>বিক্রয় উপযোগী </li>
+                    <li>প্যারেন্ট মাছ </li>
+>>>>>>> d9988afc0349abf53695530a492a178ae396704d
                   </ul>
               </div>
               <div className='fish__buy__notice'>

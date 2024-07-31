@@ -211,6 +211,20 @@ nav.close ~ .dashbord .das__toparea{
     grid-template-columns: repeat(auto-fit, minmax(300px , auto));
     gap: 20px;
 }
+.owner_post_actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 20px;
+}
+.owner_action {
+    font-size: 30px;
+    cursor: pointer;
+    transition: all .50s ease;
+}
+.owner_action:hover {
+    color: #0cdddd;
+}
 .common {
     /* width: calc( 100%/3 - 15px); */
     background: var(--main-color);

@@ -333,6 +333,7 @@ select,input[type="number"],input[type="text"] {
   display: grid;
   grid-template-columns: repeat(auto-fit,minmax(90px,auto));
   gap: 5px;
+  padding-left: 0px;
 }
 
 .fish__buy__menu ul li{

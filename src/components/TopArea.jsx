@@ -1,10 +1,6 @@
 import React from 'react';
-
+import logo from "../images/logo.png"
 import { CgMenuGridO } from "react-icons/cg";
-<<<<<<< HEAD
-import logo from "../images/logo.png";
-=======
->>>>>>> d9988afc0349abf53695530a492a178ae396704d
 import { Button } from 'react-bootstrap';
 
 const TopArea = ({isToggled, setIsToggled}) => {
@@ -22,14 +18,9 @@ const TopArea = ({isToggled, setIsToggled}) => {
           </div>   
         </div>
         <div className="right__side">
-<<<<<<< HEAD
           <i className="ri-moon-fill mode__toggle mode__toggle"></i>
           <Button variant="success" size="sm">Login</Button>
           {/* <Button variant="secondary" size="sm">Logout</Button> */}
-=======
-           <Button variant="success">Login</Button>
-           {/* <Button variant="secondary">Logout</Button> */}
->>>>>>> d9988afc0349abf53695530a492a178ae396704d
         </div>
       </div>
     );

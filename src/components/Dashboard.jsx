@@ -3,16 +3,12 @@ import man1 from "../images/man1.jpg";
 import man2 from "../images/man2.png";
 import man3 from "../images/man3.webp";
 import man4 from "../images/man4.png";
-<<<<<<< HEAD
 import f from "../images/a1.jpeg"
-=======
-import f from "../images/s.webp"
 import { CiEdit } from "react-icons/ci";
 import { FaDeleteLeft } from "react-icons/fa6";
 import { BiSolidShow } from "react-icons/bi";
 import { MdVisibilityOff } from "react-icons/md";
 
->>>>>>> d9988afc0349abf53695530a492a178ae396704d
 
 const Dashboard = () => {
     return (

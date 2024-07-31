@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AxiosInstance } from '../utils/Axios';
 
-const FishSell = () => {
+const CommonForm = () => {
   const [formData, setFormData] = useState({
     name: 'সায়েম রাহমান',
     phone_number: '০১৯২২-৫৯০০১৯',
@@ -170,4 +170,6 @@ const FishSell = () => {
   );
 };
 
-export default FishSell;
+
+
+export default CommonForm;

@@ -3,7 +3,7 @@ import man1 from "../images/man1.jpg";
 import man2 from "../images/man2.png";
 import man3 from "../images/man3.webp";
 import man4 from "../images/man4.png";
-import f from "../images/s.webp"
+import f from "../images/a1.jpeg"
 
 const Dashboard = () => {
     return (

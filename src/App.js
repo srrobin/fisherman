@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import "./App.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Dashboard from './components/Dashboard';
 import FishBuy from './components/FishBuy';
 import FishSell from './components/FishSell';

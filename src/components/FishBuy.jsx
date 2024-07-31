@@ -1,201 +1,67 @@
-import React from 'react';
-import f from "../images/s.webp"
-import f1 from "../images/f1.jpg"
-import f2 from "../images/f2.jpg"
+import React, { useEffect, useState } from 'react';
+
+import { AxiosInstance } from '../utils/Axios';
+import { formatDistanceToNow } from 'date-fns';
+
 const FishBuy = () => {
+    const [notices,setNotices]=useState([]);
+    console.log("🚀 ~ FishBuy ~ notices:", notices)
+    
+    useEffect (() => {
+        fetchNotice();
+    }, []);
+
+    const fetchNotice = () => {
+        AxiosInstance.get("/notice")
+            .then(res => setNotices(res.data))
+            .catch(err => console.log(err));
+    };
+    const formatTime = (date) => {
+        if (!date) return 'Unknown time'; // Handle missing date
+        const parsedDate = new Date(date);
+        if (isNaN(parsedDate.getTime())) return 'Invalid date'; // Handle invalid date
+        return formatDistanceToNow(parsedDate, { addSuffix: true });
+      };
     return (
         <div className='fish__buy'>
             <div className='fish__buy__area'>
               <div className='fish__buy__title'>মাছ ক্রয় করুন</div> 
               <div className='fish__buy__menu'>
                   <ul>
-                    <li> ১-দিনের পোনা </li>
-                    <li> ১৫-দিনের পোনা </li>
-                    <li> ১-মাসের পোনা </li>
-                    <li> বিক্রয় উপযোগী </li>
+                    <li> ছোট পোনা </li>
+                    <li> বড় পোনা </li>
+                    <li> বিক্রয় উপযোগী </li> 
+                    <li> বাংলা মাছ  </li>   
                     <li> প্যারেন্ট মাছ </li>
                   </ul>
               </div>
               <div className='fish__buy__notice'>
-                    <div className='single__notice'>
+                {notices?.reverse().map((notice) => (
+                   <div className='single__notice' key={notice.id}>
                         <div className='farmer__info'>
-                            <span>নামঃ  মোঃ হাসেম আলী</span>
-                            <span>মোবাঃ ০১৯২২৫৯০০১৯</span>
-                            <span style={{color:"#a52a2a",fontWeight:"600"}}>স্থানঃ রামভদ্রপুর</span> 
-                            <span style={{color:"green",fontWeight:"600"}}>২ ঘন্টা আগে</span> 
+                            <span>{notice?.name}</span> 
+                            <span>মোবাঃ {notice?.phone_number}</span>
+                            <span style={{color:"#a52a2a",fontWeight:"600"}}>স্থানঃ{notice?.place_name}</span> 
+                            <span style={{ color: "green", fontWeight: "600" }}>{formatTime(notice?.created_at)}</span>
                         </div>
 
                         <div className='fish_image'>
-                            <img src={f} alt=''/>
+                            <img src={notice?.fish_image} alt=''/>
                         </div>
                         <div className='fish__info'>
-                            <span> মাছের নামঃ শিং মাছ</span>
-                            <span>  অবস্তাঃ ১-দিনের পোনা</span>
-                            <span>  পরিমানঃ ২০০০  ( পিস )</span>
-                            <span>  মূল্যঃ  ১০০০ ( হাজার হিসেবে ) </span>
+                            <span> মাছের নামঃ{notice?.fish_name}</span>
+                            <span> অবস্তাঃ
+                            {notice?.fish_type === "1" && "ছোট পোনা"}
+                            {notice?.fish_type === "2" && "বড় পোনা"}
+                            {notice?.fish_type === "3" && "বিক্রয় উপযোগী"}
+                            {notice?.fish_type === "4" && "প্যারেন্ট মাছ"}
+                            </span>
+                            <span> পরিমানঃ {notice?.fish_quantity}</span>
+                            <span> মূল্যঃ  {notice?.fish_price} </span>
                         </div>
                     </div>
-                    <div className='single__notice'>
-                        <div className='farmer__info'>
-                            <span>নামঃ  মোঃ হাসেম আলী</span>
-                            <span>মোবাঃ ০১৯২২৫৯০০১৯</span>
-                            <span style={{color:"#a52a2a",fontWeight:"600"}}>স্থানঃ রামভদ্রপুর</span> 
-                            <span style={{color:"green",fontWeight:"600"}}>২ ঘন্টা আগে</span> 
-                        </div>
-                        <div className='fish_image'>
-                            <img src={f1} alt=''/>
-                        </div>
-                        <div className='fish__info'>
-                            <span> মাছের নামঃ শিং মাছ</span>
-                            <span> মাছের অবস্তাঃ ১-দিনের পোনা</span>
-                            <span> মাছের পরিমানঃ ২০০০  ( পিস )</span>
-                            <span> মাছের মূল্যঃ  ১০০০ ( হাজার হিসেবে ) </span>
-                        </div>
-                    </div>
-                    <div className='single__notice'>
-                        <div className='farmer__info'>
-                        <span>নামঃ  মোঃ হাসেম আলী</span>
-                        <span>মোবাঃ ০১৯২২৫৯০০১৯</span>
-                        <span style={{color:"#a52a2a",fontWeight:"600"}}>স্থানঃ রামভদ্রপুর</span> 
-                        <span style={{color:"green",fontWeight:"600"}}>২ ঘন্টা আগে</span> 
-                           
-                        </div>
-                        <div className='fish_image'>
-                            <img src={f2} alt=''/>
-                        </div>
-                        <div className='fish__info'>
-                            <span> মাছের নামঃ শিং মাছ</span>
-                            <span> মাছের অবস্তাঃ ১-দিনের পোনা</span>
-                            <span> মাছের পরিমানঃ ২০০০  ( পিস )</span>
-                            <span> মাছের মূল্যঃ  ১০০০ ( হাজার হিসেবে ) </span>
-                        </div>
-                    </div>
-                    <div className='single__notice'>
-                        <div className='farmer__info'>
-                        <span>নামঃ  মোঃ হাসেম আলী</span>
-                        <span>মোবাঃ ০১৯২২৫৯০০১৯</span>
-                        <span style={{color:"#a52a2a",fontWeight:"600"}}>স্থানঃ রামভদ্রপুর</span> 
-                        <span style={{color:"green",fontWeight:"600"}}>২ ঘন্টা আগে</span> 
-                           
-                        </div>
-                        <div className='fish_image'>
-                            <img src={f1} alt=''/>
-                        </div>
-                        <div className='fish__info'>
-                            <span> মাছের নামঃ শিং মাছ</span>
-                            <span> মাছের অবস্তাঃ ১-দিনের পোনা</span>
-                            <span> মাছের পরিমানঃ ২০০০  ( পিস )</span>
-                            <span> মাছের মূল্যঃ  ১০০০ ( হাজার হিসেবে ) </span>
-                        </div>
-                    </div>
-                    <div className='single__notice'>
-                        <div className='farmer__info'>
-                        <span>নামঃ  মোঃ হাসেম আলী</span>
-                        <span>মোবাঃ ০১৯২২৫৯০০১৯</span>
-                        <span style={{color:"#a52a2a",fontWeight:"600"}}>স্থানঃ রামভদ্রপুর</span> 
-                        <span style={{color:"green",fontWeight:"600"}}>২ ঘন্টা আগে</span> 
-                           
-                        </div>
-                        <div className='fish_image'>
-                            <img src={f2} alt=''/>
-                        </div>
-                        <div className='fish__info'>
-                            <span> মাছের নামঃ শিং মাছ</span>
-                            <span> মাছের অবস্তাঃ ১-দিনের পোনা</span>
-                            <span> মাছের পরিমানঃ ২০০০  ( পিস )</span>
-                            <span> মাছের মূল্যঃ  ১০০০ ( হাজার হিসেবে ) </span>
-                        </div>
-                    </div>
-                    <div className='single__notice'>
-                        <div className='farmer__info'>
-                        <span>নামঃ  মোঃ হাসেম আলী</span>
-                        <span>মোবাঃ ০১৯২২৫৯০০১৯</span>
-                        <span style={{color:"#a52a2a",fontWeight:"600"}}>স্থানঃ রামভদ্রপুর</span> 
-                        <span style={{color:"green",fontWeight:"600"}}>২ ঘন্টা আগে</span> 
-                           
-                        </div>
-                        <div className='fish_image'>
-                            <img src={f} alt=''/>
-                        </div>
-                        <div className='fish__info'>
-                            <span> মাছের নামঃ শিং মাছ</span>
-                            <span> মাছের অবস্তাঃ ১-দিনের পোনা</span>
-                            <span> মাছের পরিমানঃ ২০০০  ( পিস )</span>
-                            <span> মাছের মূল্যঃ  ১০০০ ( হাজার হিসেবে ) </span>
-                        </div>
-                    </div>
-                    <div className='single__notice'>
-                        <div className='farmer__info'>
-                        <span>নামঃ  মোঃ হাসেম আলী</span>
-                        <span>মোবাঃ ০১৯২২৫৯০০১৯</span>
-                        <span style={{color:"#a52a2a",fontWeight:"600"}}>স্থানঃ রামভদ্রপুর</span> 
-                        <span style={{color:"green",fontWeight:"600"}}>২ ঘন্টা আগে</span> 
-                           
-                        </div>
-                        <div className='fish_image'>
-                            <img src={f1} alt=''/>
-                        </div>
-                        <div className='fish__info'>
-                            <span> মাছের নামঃ শিং মাছ</span>
-                            <span> মাছের অবস্তাঃ ১-দিনের পোনা</span>
-                            <span> মাছের পরিমানঃ ২০০০  ( পিস )</span>
-                            <span> মাছের মূল্যঃ  ১০০০ ( হাজার হিসেবে ) </span>
-                        </div>
-                    </div>
-                    <div className='single__notice'>
-                        <div className='farmer__info'>
-                        <span>নামঃ  মোঃ হাসেম আলী</span>
-                        <span>মোবাঃ ০১৯২২৫৯০০১৯</span>
-                        <span style={{color:"#a52a2a",fontWeight:"600"}}>স্থানঃ রামভদ্রপুর</span> 
-                        <span style={{color:"green",fontWeight:"600"}}>২ ঘন্টা আগে</span> 
-                           
-                        </div>
-                        <div className='fish_image'>
-                            <img src={f2} alt=''/>
-                        </div>
-                        <div className='fish__info'>
-                            <span> মাছের নামঃ শিং মাছ</span>
-                            <span> মাছের অবস্তাঃ ১-দিনের পোনা</span>
-                            <span> মাছের পরিমানঃ ২০০০  ( পিস )</span>
-                            <span> মাছের মূল্যঃ  ১০০০ ( হাজার হিসেবে ) </span>
-                        </div>
-                    </div>
-                    <div className='single__notice'>
-                        <div className='farmer__info'>
-                        <span>নামঃ  মোঃ হাসেম আলী</span>
-                        <span>মোবাঃ ০১৯২২৫৯০০১৯</span>
-                        <span style={{color:"#a52a2a",fontWeight:"600"}}>স্থানঃ রামভদ্রপুর</span> 
-                        <span style={{color:"green",fontWeight:"600"}}>২ ঘন্টা আগে</span> 
-                           
-                        </div>
-                        <div className='fish_image'>
-                            <img src={f} alt=''/>
-                        </div>
-                        <div className='fish__info'>
-                            <span> মাছের নামঃ শিং মাছ</span>
-                            <span> মাছের অবস্তাঃ ১-দিনের পোনা</span>
-                            <span> মাছের পরিমানঃ ২০০০  ( পিস )</span>
-                            <span> মাছের মূল্যঃ  ১০০০ ( হাজার হিসেবে ) </span>
-                        </div>
-                    </div>
-                    <div className='single__notice'>
-                        <div className='farmer__info'>
-                        <span>নামঃ  মোঃ হাসেম আলী</span>
-                        <span>মোবাঃ ০১৯২২৫৯০০১৯</span>
-                        <span style={{color:"#a52a2a",fontWeight:"600"}}>স্থানঃ রামভদ্রপুর</span> 
-                        <span style={{color:"green",fontWeight:"600"}}>২ ঘন্টা আগে</span> 
-                           
-                        </div>
-                        <div className='fish_image'>
-                            <img src={f1} alt=''/>
-                        </div>
-                        <div className='fish__info'>
-                            <span> মাছের নামঃ শিং মাছ</span>
-                            <span> মাছের অবস্তাঃ ১-দিনের পোনা</span>
-                            <span> মাছের পরিমানঃ ২০০০  ( পিস )</span>
-                            <span> মাছের মূল্যঃ  ১০০০ ( হাজার হিসেবে ) </span>
-                        </div>
-                    </div>
+                ))}
+ 
               </div>
             </div>
         </div>

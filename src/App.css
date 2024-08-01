@@ -222,9 +222,24 @@ nav.close ~ .dashbord .das__toparea{
     cursor: pointer;
     transition: all .50s ease;
 }
-.owner_action:hover {
-    color: #0cdddd;
+.owner_action:nth-child(1)  {
+    color: #2f4f4f;
 }
+.owner_action:nth-child(2)  {
+    color: rgb(182, 54, 54);
+}
+.owner_action:nth-child(1):hover  {
+    color: rgb(0, 23, 128);
+}
+.owner_action:nth-child(2):hover  {
+    color: red;
+}
+.owner_action:nth-child(3)  {
+    color: #006400;
+}
+/* .delete_color {
+    color: red;
+} */
 .common {
     /* width: calc( 100%/3 - 15px); */
     background: var(--main-color);
@@ -282,10 +297,11 @@ nav.close ~ .dashbord .das__toparea{
  border-radius: 6px;
  box-shadow: 1px 2px 2px 0px rgba(0,0,0,.4);
 }
-.single_support img{
-    width:100px ;
+.single_support img {
+    width: 100px;
     border-radius: 50%;
-    object-fit: contain;
+    object-fit: cover;
+    height: 100px;
 }
 .fish__sell,.fish__buy{
     display: grid;
@@ -401,8 +417,8 @@ select,input[type="number"],input[type="text"] {
 
 }
 .single_imergency_man img {
-    width: 322px;
-    height: 350px;
+    width: 250px;
+    height: 250px;
     border-radius: 6px;
     margin-block-end: 20px;
 }
@@ -411,7 +427,9 @@ select,input[type="number"],input[type="text"] {
     font-weight: 600;
 }
 
-
+.active{
+    color: green;
+}
 
 
 

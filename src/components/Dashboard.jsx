@@ -1,16 +1,24 @@
-import React from 'react';
-import man1 from "../images/man1.jpg";
-import man2 from "../images/man2.png";
-import man3 from "../images/man3.webp";
-import man4 from "../images/man4.png";
-import f from "../images/a1.jpeg"
-import { CiEdit } from "react-icons/ci";
-import { FaDeleteLeft } from "react-icons/fa6";
+import React, { useState } from 'react';
+import man1 from "../images/m1.png";
+import man2 from "../images/m2.jpg";
+import man3 from "../images/m3.jpg";
+import man4 from "../images/m4.jpg";
+import f from "../images/f1.jpg"
+import f1 from "../images/s.webp"
+import { RiChatDeleteFill } from "react-icons/ri";
 import { BiSolidShow } from "react-icons/bi";
 import { MdVisibilityOff } from "react-icons/md";
+import { BiSolidEditAlt } from "react-icons/bi";
+
+
 
 
 const Dashboard = () => {
+  const [toggle, setToggle] = useState(false);
+
+  const handleToggle = () => {
+        setToggle(!toggle);
+  }
     return (
     <section class="dashbord">
       <div class="das__content">
@@ -41,15 +49,16 @@ const Dashboard = () => {
     <div className='fish__buy__notice'>
                     <div className='owner_post'>
                       <div className='owner_post_actions'>
-                        <div className=''>
-                            <CiEdit  className='owner_action'/>
+                        <div className='owner_action'>
+                            <BiSolidEditAlt   className=''/>
                         </div>
-                        <div className=''>
-                            <FaDeleteLeft  className='owner_action'/>
+                        <div className='owner_action'>
+                            <RiChatDeleteFill  className=''/>
                         </div>
-                        <div className=''>
-                            <BiSolidShow  className='owner_action'/>
-                            <MdVisibilityOff  className='owner_action' style={{display:"none"}}/>
+                        <div className='owner_action' onClick={handleToggle}>
+                          {toggle ?  <MdVisibilityOff   style={{ color: "#6c757d"}}/>: 
+                            <BiSolidShow  className=''/>
+                          }
                         </div>
                       </div>
                       <div className='single__notice'>
@@ -73,15 +82,16 @@ const Dashboard = () => {
                     </div>
                     <div className='owner_post'>
                       <div className='owner_post_actions'>
-                        <div className=''>
-                            <CiEdit  className='owner_action'/>
+                        <div className='owner_action'>
+                            <BiSolidEditAlt  className=' '/>
                         </div>
-                        <div className=''>
-                            <FaDeleteLeft  className='owner_action'/>
+                        <div className='owner_action'>
+                            <RiChatDeleteFill  className=''/>
                         </div>
-                        <div className=''>
-                            <BiSolidShow  className='owner_action'/>
-                            <MdVisibilityOff  className='owner_action' style={{display:"none"}}/>
+                        <div className='owner_action' onClick={handleToggle}>
+                          {toggle ?  <MdVisibilityOff   style={{ color: "#6c757d"}}/>: 
+                            <BiSolidShow  className=''/>
+                          }
                         </div>
                       </div>
                       <div className='single__notice'>
@@ -93,7 +103,7 @@ const Dashboard = () => {
                           </div>
 
                           <div className='fish_image'>
-                              <img src={f} alt=''/>
+                              <img src={f1} alt=''/>
                           </div>
                           <div className='fish__info'>
                               <span> মাছের নামঃ শিং মাছ</span>

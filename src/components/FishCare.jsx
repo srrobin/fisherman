@@ -1,5 +1,5 @@
 import React from 'react';
-import s from "../images/a1.jpeg"
+import s from "../images/s.webp"
 const FishCare = () => {
     return (
         <div className='fish__care'>

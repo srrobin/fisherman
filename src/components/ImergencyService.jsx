@@ -1,10 +1,10 @@
 import React from 'react';
-import dr1 from "../images/a1.jpeg"
-import dr2 from "../images/a2.jpeg"
-import dr3 from "../images/a3.jpeg"
-import dr4 from "../images/a4.jpeg"
-import dr5 from "../images/a5.jpeg"
-import dr6 from "../images/a6.jpeg"
+import dr1 from "../images/m1.png"
+import dr2 from "../images/m2.jpg"
+import dr3 from "../images/m3.jpg"
+import dr4 from "../images/m4.jpg"
+import dr5 from "../images/h1.jpg"
+import dr6 from "../images/h2.jpg"
 
 const ImergencyService = () => {
     return (
@@ -20,28 +20,28 @@ const ImergencyService = () => {
                </div>
                <div className='single_imergency_man'> 
                   <img src={dr2} alt=''/>
-                  <span>ডাঃ কুদ্দুস পণ্ডিত </span>
-                  <span>০১৯২২৫৯০০১৯ </span> 
+                  <span>ডাঃ আদিল ইসলাম </span>
+                  <span>০১৭২২৫৯০০২১ </span> 
                </div>
                <div className='single_imergency_man'> 
                   <img src={dr3} alt=''/>
-                  <span>ডাঃ কুদ্দুস পণ্ডিত </span>
+                  <span>ডাঃ সৈকত হক </span> 
                   <span>০১৯২২৫৯০০১৯ </span> 
                </div>
                <div className='single_imergency_man'> 
                   <img src={dr4} alt=''/>
-                  <span>ডাঃ কুদ্দুস পণ্ডিত </span>
-                  <span>০১৯২২৫৯০০১৯ </span> 
+                  <span>ডাঃ রাফি </span> 
+                  <span>০১৬২২৫৯১২১৯ </span>   
                </div>
                <div className='single_imergency_man'> 
                   <img src={dr5} alt=''/>
-                  <span>ডাঃ কুদ্দুস পণ্ডিত </span>
-                  <span>০১৯২২৫৯০০১৯ </span> 
+                  <span>ডাঃ নাহিদ মুল্লা </span> 
+                  <span>০১৫২২৪৩০০৯০ </span> 
                </div>
                <div className='single_imergency_man'> 
                   <img src={dr6} alt=''/>
-                  <span>ডাঃ কুদ্দুস পণ্ডিত </span>
-                  <span>০১৯২২৫৯০০১৯ </span> 
+                  <span>ডাঃ অর্ণব কুমার সুত্র ধর</span> 
+                  <span>০১৬২২৫৯৪৫১৯ </span> 
                </div>   
             </div>
             </div>
